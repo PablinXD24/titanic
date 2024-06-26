@@ -1,0 +1,75 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff; /* Fundo escuro */
+    perspective: 1000px;
+}
+
+.poster-container {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg) rotateX(0deg) scale(1);
+    transition: transform 0.5s ease-out; /* Transição suave e mais longa */
+   
+}
+
+.poster {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #fff;
+}
+
+/* Remove the border if the layer contains an image */
+.layer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none; /* Remove the border for the image */
+}
+
+.layer:has(img) {
+    border: none; /* Remove the border if the layer contains an image */
+}
+
+/* Ajuste as transformações de cada camada */
+.layer1 {
+    transform: translateZ(-75px);
+}
+
+.layer2 {
+    transform: translateZ(25px);
+}
+
+.layer3 {
+    transform: translateZ(0px);
+}
+
+.layer4 {
+    transform: translateZ(-35px);
+}
+
+.layer5 {
+    transform: translateZ(-50px);
+}
+
+.layer6 {
+    transform: translateZ(-75px);
+}
